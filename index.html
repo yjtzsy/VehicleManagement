@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="src/easyui/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/custom.js" ></script>
+		<script type="text/javascript" src="js/Ajax.js" ></script>
+		<script type="text/javascript" src="js/client.js" ></script>
+		<script type="text/javascript" src="js/excel.js" ></script>
+		<script type="text/javascript" src="src/easyui/jquery.json-2.4.js" ></script>
+		<script type="text/javascript" src="src/DatePicker/WdatePicker.js" ></script>
+		<script type="text/javascript" src="src/jquery/jquery-form.js" ></script>
+		<link rel="stylesheet" href="themes/style.css" />
+	</head>
+	<body style="overflow:auto;">
+	</body>
+</html>
+<script> 
+	$(document).ready(function(){
+		if(typeof Custom=='object'&&Custom.Load&&typeof Custom.Load=='function'){
+			Custom.Load();
+		}
+	});
+</script>

@@ -1,0 +1,339 @@
+body{
+	margin: 0px;
+}
+table{
+	width: inherit;
+	border-top-width: 0px;    
+	border-right-width: 0px;    
+	border-bottom-width: 1px;    
+	border-left-width: 0px;    
+	border-top-color: #CCCCCC;    
+	border-right-color: #CCCCCC;    
+	border-bottom-color: #CCCCCC;    
+	border-left-color: #CCCCCC; 
+	overflow: scroll;
+}
+input[type="button"]{
+	background: #C5C5C7;
+}
+textarea{
+	width: 95%;
+	height: 80%;
+	border: 0px;
+	padding: 0px;
+	margin-top: 5px;
+	font-size: 16px;
+	outline: none;
+	resize: none;
+	overflow:hidden;
+}
+input{
+	width: 90px;
+	height: 21px;
+	border: 0px;
+	margin: 0px;
+	text-align: center;
+}
+input:focus
+{ 
+    outline:none;
+}
+#wrap {
+	width: 100%;
+	height: inherit;
+}
+#title {
+	background: #C5C5C7;
+	border-bottom: 1px solid #D2D2D6;
+}
+#title span {
+	float: left; 
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	cursor: pointer;
+	width: 150px;
+	text-align: center;
+	background: #C5C5C7;
+}
+#content{
+	margin: 0px;
+	padding: 0px;
+	height: auto;
+	width: inherit;
+	text-align: center;
+	-webkit-padding-start:0px
+}
+#content li{
+	display: none;
+	height: inherit;
+	width: inherit;
+	text-align: center;
+}
+#title span.select {
+	background: #E2EDDA;
+	color: #51942C;
+}
+#content li.show {
+	display: block;
+}
+.exam{
+	width: 900px;
+	height: 450px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.exam table{
+	border: 1px;
+}
+.exam span{
+	line-height: 30px;
+}
+.exam td{
+	width: 12.5%;
+}
+.sub_box{
+	width: 300px;
+	height:30px;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top:30px;
+}
+.time_box,.time_b{
+	float: left;
+	text-align: center;
+}
+.time{
+	float: left;
+	width: 50px;
+	height: inherit;
+}
+.min_time{
+	float: left;
+	width: 50px;
+	height: inherit;
+}
+.time input{
+	width: 50px;
+	text-align: center;
+	line-height: 30px;
+}
+.time_b input{
+	width: 35px;
+	text-align: center;
+}
+.min_time input{
+	width:30px;
+	text-align: right;
+	line-height: 30px;
+}
+.place{
+	padding: 0px 0px;
+	float: left;
+	width: 275px;
+	height: inherit;
+}
+.place input{
+	text-align: left;
+	height: 30px;
+	line-height: 25px;
+}
+.exam tr:first-child td{
+	border-top-width: 0px;    
+	border-right-width: 0px;    
+	border-bottom-width: 0px;    
+	border-left-width: 0px;  
+}
+
+
+.bu_box{
+	width:inherit;
+	height:30px;
+}
+.basicinfo{
+	width: inherit;
+	height: auto;
+}
+.basicinfo td{
+	height: 25px
+}
+.pointer,.reg_pointer,.oil_pointer{
+	cursor: pointer;
+}
+
+
+
+.add_box{
+	position: fixed;
+	width: 800px;
+	height: 410px;
+	z-index: 100000;
+	top: 90px;
+	background: #FFFFFF;
+	margin-left: calc(50% - 400px);
+}
+.title_box{
+	width: auto;
+	margin: 10px 20px;
+}
+.add_box td{
+	width: 26.5%;
+	text-align: center;
+	height:25px;
+}
+.add_box input{
+	background:rgba(226,237,218,0.1);
+}
+.textara{
+	background:rgba(226,237,218,0.1);
+}
+.po_box{
+	width: inherit;
+	height: 30px;
+	margin-top: 20px;
+}
+select{
+	width: calc(100%);
+	height: calc(100%);
+	background:rgba(226,237,218,0.1);
+	border: 0px;
+	margin: 0px;
+	outline: none;
+}
+.register{
+	width: inherit;
+	height: auto;
+}
+.td_4 input{
+	width: 140px;
+}
+.td_5 input{
+	width: 180px;
+}
+.register td{
+	height: 30px;
+	word-wrap:break-word;
+}
+.span_box span{
+	font-size: 14px;
+}
+.span_box input{
+	height: 21px;
+}
+.name_box{
+	float: left;
+	width: 200px;
+}
+.name_box input{
+	width: 100px;
+	text-align: left;
+}
+.reg_button{
+	width: 100px;
+	height: 25px;
+	float: right;
+	margin: 0px 10px;
+	cursor: pointer;
+}
+.add_registered{
+	position: fixed;
+	width: 800px;
+	height: 280px;
+	z-index: 100000;
+	top: 90px;
+	background: #FFFFFF;
+	margin-left: calc(50% - 400px);
+}
+.Import_Excel{
+	position: fixed;
+	width: 300px;
+	height: 180px;
+	z-index: 100000;
+	top: 90px;
+	background: #FFFFFF;
+	text-align: center;
+	margin-left: calc(50% - 150px);
+}
+.add_OilCount{
+	position: fixed;
+	width: 800px;
+	height: 250px;
+	z-index: 100000;
+	top: 90px;
+	background: #FFFFFF;
+	margin-left: calc(50% - 400px);
+}
+.registed_box{
+	width: 400px;
+	height: 30px;
+}
+.registed_box input{
+	width: 100px;
+	text-align: left;
+}
+.add_registered td{
+	text-align: center;
+}
+.add_OilCount td{
+	text-align: center;
+}
+.OilCount{
+	margin-top: 2px;
+	width: inherit;
+	height: auto;
+}
+.OilCount td{
+	width: 100px;
+	height: 30px;
+	word-wrap:break-word;
+}
+.reg_box{
+	margin-top: 5px;
+	width:inherit;
+	height:30px;
+}
+.count_box span{
+	font-size: 14px;
+}
+.OilCount input{
+	height: 21px;
+}
+.regist_box{
+	float: left;
+	width: 200px;
+}
+.regist_box input{
+	width: 100px;
+	text-align: left;
+}
+.regist_button{
+	width: 100px;
+	height: 25px;
+	float: right;
+	margin: 0px 10px;
+	cursor: pointer;
+}
+.apply_content td,th{
+	height: 30px;
+	padding-top: 1px;
+	word-wrap:break-word;
+}
+.apply_query td,th{
+	height: 30px;
+	padding-top: 1px;
+	word-wrap:break-word;
+}
+.mask{     
+      background: #E2EDDA;
+	  filter: alpha(opacity=90); /* IE的透明度 */
+	  opacity: 0.9; /* 透明度 */
+	  display: none;
+	  position: absolute;
+	  top: 0px;
+	  left: 0px;
+	  width: 100%;
+	  height: 100%;
+	  z-index: 1000; /* 此处的图层要大于页面 */
+	  display:none;
+	  _background-color:#a0a0a0; /* 解决IE6的不透明问题 */   
+}

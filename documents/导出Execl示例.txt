@@ -1,0 +1,146 @@
+CreateManagerBasicInfoToExcel:function(){
+		var xmlstr="";
+        xmlstr += "<Root WorksheetName='用车审批单' WorksheetTitle='用车审批单" + time + "' ExpandedColumnCount='28' DefaultColumnWidth='50' >";
+        xmlstr += "     <Columns>";
+        xmlstr += "         <Column AutoFitWidth=\"0\" Width=\"50\" />";
+        xmlstr += "         <Column AutoFitWidth=\"0\" Width=\"250\" Height=\"250\"/>";
+        xmlstr += "         <Column AutoFitWidth=\"0\" Width=\"200\" />";
+        xmlstr += "         <Column AutoFitWidth=\"0\" Width=\"50\" />";
+        xmlstr += "         <Column AutoFitWidth=\"0\" Width=\"80\" />";
+        xmlstr += "         <Column AutoFitWidth=\"0\" Width=\"80\" />";
+        xmlstr += "         <Column AutoFitWidth=\"0\" Width=\"80\" />";
+        xmlstr += "         <Column AutoFitWidth=\"0\" Width=\"300\" />";
+        xmlstr += "         <Column AutoFitWidth=\"0\" Width=\"100\" />";
+        xmlstr += "         <Column AutoFitWidth=\"0\" Width=\"100\" />";
+        xmlstr += "         <Column AutoFitWidth=\"0\" Width=\"100\" />";
+        xmlstr += "     </Columns>";
+
+        // - 样式属性
+        xmlstr += "     <StyleSheet>";
+        xmlstr += "         <Style ID=\"header\" >";
+        xmlstr += "             <Alignment Vertical=\"Center\" Horizontal=\"Center\"  WrapText=\"1\" />";
+        xmlstr += "             <Font FontName=\"Times New Roman\" Family=\"Roman\" Size=\"18\" Bold=\"1\"/>";
+        xmlstr += "         </Style>";
+        xmlstr += "         <Style ID=\"title\" >";
+        xmlstr += "             <Alignment Horizontal=\"Center\" Vertical=\"Center\" WrapText=\"1\" />";
+        xmlstr += "             <Borders>";
+        xmlstr += "                 <Border Position=\"Bottom\" LineStyle=\"Continuous\" Weight=\"1\"/>";
+        xmlstr += "                 <Border Position=\"Left\" LineStyle=\"Continuous\" Weight=\"1\"/>";
+        xmlstr += "                 <Border Position=\"Right\" LineStyle=\"Continuous\" Weight=\"1\"/>";
+        xmlstr += "                 <Border Position=\"Top\" LineStyle=\"Continuous\" Weight=\"1\"/>";
+        xmlstr += "             </Borders>";
+        xmlstr += "             <Font FontName=\"宋体\" CharSet=\"134\" Size=\"10\"/>";
+        xmlstr += "         </Style>";
+        xmlstr += "         <Style ID=\"cell_1\" >";
+        xmlstr += "             <Alignment Horizontal=\"Center\" Vertical=\"Center\" ShrinkToFit=\"1\"/>";
+        xmlstr += "             <Borders>";
+        xmlstr += "                 <Border Position=\"Bottom\"  LineStyle=\"Continuous\" Weight=\"1\"/>";
+        xmlstr += "                 <Border Position=\"Left\" LineStyle=\"Continuous\" Weight=\"1\"/>";
+        xmlstr += "                 <Border Position=\"Right\" LineStyle=\"Continuous\"  Weight=\"1\"/>";
+        xmlstr += "                 <Border Position=\"Top\" LineStyle=\"Continuous\" Weight=\"1\"/>";
+        xmlstr += "             </Borders>";
+        xmlstr += "             <Font FontName=\"宋体\" CharSet=\"134\" Color=\"#000000\" />";
+        xmlstr += "             <Interior/>";
+        xmlstr += "         </Style>";
+        xmlstr += "         <Style ID=\"cell_3\" >";
+        xmlstr += "             <Alignment WrapText=\"1\"  Vertical=\"Center\" ShrinkToFit=\"1\"/>";
+        xmlstr += "             <Borders>";
+        xmlstr += "                 <Border Position=\"Bottom\"  LineStyle=\"Continuous\" Weight=\"1\"/>";
+        xmlstr += "                 <Border Position=\"Left\" LineStyle=\"Continuous\" Weight=\"1\"/>";
+        xmlstr += "                 <Border Position=\"Right\" LineStyle=\"Continuous\"  Weight=\"1\"/>";
+        xmlstr += "                 <Border Position=\"Top\" LineStyle=\"Continuous\" Weight=\"1\"/>";
+        xmlstr += "             </Borders>";
+        xmlstr += "             <Font FontName=\"宋体\" CharSet=\"134\" Color=\"#000000\" />";
+        xmlstr += "             <Interior/>";
+        xmlstr += "         </Style>";
+        xmlstr += "         <Style ID=\"cell_2\" >";
+        xmlstr += "             <Alignment Horizontal=\"Center\" Vertical=\"Center\" ShrinkToFit=\"1\"/>";
+        xmlstr += "             <Borders>";
+        xmlstr += "                 <Border Position=\"Bottom\"  LineStyle=\"Continuous\" Weight=\"1\"/>";
+        xmlstr += "                 <Border Position=\"Left\" LineStyle=\"Continuous\" Weight=\"1\"/>";
+        xmlstr += "                 <Border Position=\"Right\" LineStyle=\"Continuous\"  Weight=\"1\"/>";
+        xmlstr += "                 <Border Position=\"Top\" LineStyle=\"Continuous\" Weight=\"1\"/>";
+        xmlstr += "             </Borders>"
+        xmlstr += "             <Font FontName=\"宋体\" CharSet=\"134\" Color=\"#000000\"/>";
+        xmlstr += "             <Interior/>";
+        xmlstr += "             <NumberFormat Format=\"0.0\"/>";
+        xmlstr += "         </Style>";
+        xmlstr += "</StyleSheet>";
+		
+		// - 报表头（总头）
+        xmlstr += "<Title>";
+        xmlstr += "     <Row AutoFitHeight=\"0\" Height=\"28\" >";
+        xmlstr += "         <Cell MergeAcross=\"6\" StyleID=\"header\" >";
+        xmlstr += "             <Data Type=\"String\">用车审批单</Data>";
+        xmlstr += "         </Cell>";
+        xmlstr += "     </Row>";
+        // - 报表头（分部）
+        xmlstr += "     <Row AutoFitHeight=\"0\" Height=\"30\" >";
+        xmlstr += "         <Cell StyleID=\"title\">";
+        xmlstr += "             <Data Type=\"String\">序号</Data>";
+        xmlstr += "         </Cell>";
+        xmlstr += "         <Cell StyleID=\"title\">";
+        xmlstr += "             <Data Type=\"String\">任务名称</Data>";
+        xmlstr += "         </Cell>";
+        xmlstr += "         <Cell StyleID=\"title\">";
+        xmlstr += "             <Data Type=\"String\">工作进展</Data>";
+        xmlstr += "         </Cell>";
+        xmlstr += "         <Cell StyleID=\"title\">";
+        xmlstr += "             <Data Type=\"String\">工作进度</Data>";
+        xmlstr += "         </Cell>";
+        xmlstr += "         <Cell StyleID=\"title\">";
+        xmlstr += "             <Data Type=\"String\">任务状态</Data>";
+        xmlstr += "         </Cell>";
+        xmlstr += "         <Cell StyleID=\"title\">";
+        xmlstr += "             <Data Type=\"String\">完成时间</Data>";
+        xmlstr += "         </Cell>";
+        xmlstr += "         <Cell StyleID=\"title\">";
+        xmlstr += "             <Data Type=\"String\">执行人</Data>";
+        xmlstr += "         </Cell>";
+        xmlstr += "     </Row>";
+        xmlstr += "</Title>";
+
+		// 内容
+        xmlstr += "<Contents>";
+        xmlstr += "<Row AutoFitHeight=\"2\" Height=\"30\">";
+		 // - 一个单元格(Cell)
+		xmlstr += "     <Cell StyleID=\"cell_1\" MergeAcross=\"6\">";
+		xmlstr += "         <Data Type=\"Number\">" + 1 + "</Data>";
+		xmlstr += "     </Cell>";
+		xmlstr += "</Row>";
+		// - 一行（Row）
+		xmlstr += "<Row AutoFitHeight=\"2\" Height=\"30\">";
+		 // - 一个单元格(Cell)
+		xmlstr += "     <Cell StyleID=\"cell_1\" >";
+		xmlstr += "         <Data Type=\"Number\">" + 1 + "</Data>";
+		xmlstr += "     </Cell>";
+		xmlstr += "     <Cell StyleID=\"cell_1\" >";
+		xmlstr += "         <Data Type=\"String\">" + 2 + "</Data>";
+		xmlstr += "     </Cell>";
+		xmlstr += "     <Cell StyleID=\"cell_1\" >";
+		xmlstr += "         <Data Type=\"String\">" + 3 + "</Data>";
+		xmlstr += "     </Cell>";
+		xmlstr += "     <Cell StyleID=\"cell_1\" >";
+		xmlstr += "         <Data Type=\"String\">" + 4+ "</Data>";
+		xmlstr += "     </Cell>";
+		xmlstr += "</Row>";
+		xmlstr += "<Row AutoFitHeight=\"2\" Height=\"30\">";
+		 // - 一个单元格(Cell)
+		xmlstr += "     <Cell StyleID=\"cell_1\" >";
+		xmlstr += "         <Data Type=\"Number\">" + 1 + "</Data>";
+		xmlstr += "     </Cell>";
+		xmlstr += "     <Cell StyleID=\"cell_1\" >";
+		xmlstr += "         <Data Type=\"String\">" + 2 + "</Data>";
+		xmlstr += "     </Cell>";
+		xmlstr += "     <Cell StyleID=\"cell_1\" >";
+		xmlstr += "         <Data Type=\"String\">" + 3 + "</Data>";
+		xmlstr += "     </Cell>";
+		xmlstr += "     <Cell StyleID=\"cell_1\" >";
+		xmlstr += "         <Data Type=\"String\">" + 4+ "</Data>";
+		xmlstr += "     </Cell>";
+		xmlstr += "</Row>";
+		xmlstr += "</Contents>"
+        xmlstr += "</Root>";
+        $("#excelcontent").val(xmlstr);
+        $("#excelform").submit();
+	}

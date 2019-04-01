@@ -1,0 +1,379 @@
+Interface 说明：
+
+1. 获取燃油信息 GetFuelInfo
+    响应实例：
+        {"request":{"action":"GetFuelInfo","content":{}}}
+    响应示例：
+        {"response":{"errorCode":"0x0000","time":1539757606,"action":"GetFuelInfo","content":
+        [
+            {
+                "index":"1",            // 燃料索引
+                "name":"0#柴油",        // 燃料名称
+                "modifyDateTime":"2018-10-17 08:56:17", // 修改时间
+                "remark":null           // 备注
+            },{"index":"2","name":"92#乙醇清洁汽油","modifyDateTime":"2018-10-17 08:56:17","remark":null},{"index":"3","name":"95#乙醇清洁汽油","modifyDateTime":"2018-10-17 08:56:17","remark":null},{"index":"4","name":"98#乙醇清洁汽油","modifyDateTime":"2018-10-17 08:56:17","remark":null}],"time_utc":1539757606}}
+
+2. 添加车辆信息 AddVehicleInfo
+    请求实例：
+        {"request":{"action":"AddVehicleInfo","content":{"ID":"皖AKD102","VIN_NO":"56B12C","Model":"小型轿车","Brand":"三菱","Fuel_Index":"2","Color":"皓月白","Seating":"5","Time":"2018-10-17","Mileage":"76543","Oil_Wear":"10","TankSize":"55","Maximum_Load":"56000","Total_mass":"14000","Overall_Dimension":"4600*2400*2200","V_Dept":"个人","V_Dept_Manager":"个人","V_Employee_Manager":"曾恒旭","Register_Time":"2012-12-1","Responsible_Officer":"曾恒旭","FirstLeading_Person":"曾恒旭","SecondLeading_Person":"曾恒旭"}}}
+    参数：（*代表必填）
+        *   ID              // - 车牌号
+        *   VIN_NO          // - 车架号
+        *   ENGINE_SERIAL_NUMBER    // - 发动机序列号
+        *   Model           // - 车型
+        *   Brand           // - 品牌
+        *   Fuel_Index      // - 燃油索引
+        *   Color           // - 颜色
+        *   Seating         // - 座位数
+        *   Time            // - 配发时间
+        *   Mileage         // - 公里数
+        *   Oil_Wear        // - 油耗
+        *   TankSize        // - 油箱大小
+        *   Maximum_Load    // - 最大载重
+        *   Total_mass      // - 总质量
+        *   Overall_Dimension   // - 外廓尺寸
+        *   V_Dept          // - 所属单位
+        *   V_Dept_Manager  // - 管理单位
+        *   V_Employee_Manager  // - 管理人员
+        *   Register_Time   // - 入档时间
+        *   Responsible_Officer     // - 负责单位主官
+        *   FirstLeading_Person     // - 第一负责人
+        *   SecondLeading_Person    // - 第二负责人
+            remark          // - 备注
+            
+        *   注意： 车牌号,发动机序列号与车架号是唯一字段
+    响应实例：
+        {"response":{"errorCode":"0x0000","time":1539761789,"action":"AddVehicleInfo","content":null,"time_utc":1539761788}}
+
+3. 获取所有车辆信息 GetVehicleInfo
+    请求实例：
+        {"request":{"action":"GetVehicleInfo","content":{}}}
+    请求参数：
+        ID          // - 车牌号（默认模糊查询）
+    响应实例：
+        {"response":{"errorCode":"0x0000","time":1539763497,"action":"GetVehicleInfo","content":[{"index":"3","ID":"皖AKD102","VIN_NO":"56B12C","Model":"小型轿车","Brand":"三菱","Fuel_Index":"2","Color":"皓月白","Seating":"5","Time":"2018-10-17 00:00:00","Mileage":"76543","Oil_Wear":"10","TankSize":"55","Maximum_Load":"56000","Total_mass":"14000","Overall_Dimension":"4600*2400*2200","V_Dept":"个人","V_Dept_Manager":"个人","V_Employee_Manager":"曾恒旭","Register_Time":"2012-12-01","Responsible_Officer":"曾恒旭","FirstLeading_Person":"曾恒旭","SecondLeading_Person":"曾恒旭","FuelName":"92#乙醇清洁汽油"}],"time_utc":1539763497}}
+    结果描述：
+        index           // - 车辆索引
+        ID              // - 车牌号
+        VIN_NO          // - 车架号
+        ENGINE_SERIAL_NUMBER // - 发动机序列号
+        Model           // - 车型
+        Brand           // - 品牌
+        Fuel_Index      // - 燃油索引
+        FuelName        // - 燃油名称
+        Color           // - 颜色
+        Seating         // - 座位数
+        Time            // - 配发时间
+        Mileage         // - 公里数
+        Oil_Wear        // - 油耗
+        TankSize        // - 油箱大小
+        Maximum_Load    // - 最大载重
+        Total_mass      // - 总质量
+        Overall_Dimension   // - 外廓尺寸
+        V_Dept          // - 所属单位
+        V_Dept_Manager  // - 管理单位
+        V_Employee_Manager  // - 管理人员
+        Register_Time   // - 入档时间
+        Responsible_Officer     // - 负责单位主官
+        FirstLeading_Person     // - 第一负责人
+        SecondLeading_Person    // - 第二负责人
+        remark          // - 备注
+
+4. 修改车辆信息 ModifyVehicleInfo
+    请求实例：
+        {"request":{"action":"ModifyVehicleInfo","content":{"index":"3","Model":"小型轿车","Brand":"三菱","Fuel_Index":"2","Color":"皓月白","Seating":"5","Time":"2018-10-17","Mileage":"76543","Oil_Wear":"10","TankSize":"55","Maximum_Load":"56000","Total_mass":"14000","Overall_Dimension":"4600*2400*2200","V_Dept":"个人","V_Dept_Manager":"个人","V_Employee_Manager":"曾恒旭","Register_Time":"2012-12-3","Responsible_Officer":"曾恒旭","FirstLeading_Person":"曾恒旭","SecondLeading_Person":"曾恒旭"}}}
+    参数说明：
+        *   index       // - 车辆索引
+        其他参数参考获取接口
+
+        *   注意： 车牌号，发动机序列号与车架号不允许修改
+    
+    响应实例：
+        {"response":{"errorCode":"0x0000","time":1539766272,"action":"ModifyVehicleInfo","content":null,"time_utc":1539766272}}
+
+5. 检测车辆唯一字段 CheckVehicleUniqueColumn
+    请求实例：
+        {"request":{"action":"CheckVehicleUniqueColumn","content":{"ID":"皖AKD102"}}}
+        {"request":{"action":"CheckVehicleUniqueColumn","content":{"ID":"皖AKD102","VIN_NO":"56B12C"}}}
+    参数说明：
+        *   ID          // - 车牌号
+        *   VIN_NO      // - 车架号
+        *   ENGINE_SERIAL_NUMBER    // - 发动机序列号
+
+        *   注意：车牌号,发动机序列号与车架号可以一起传，也可以分别传。不传返回数据库操作失败
+    响应实例：
+        {"response":{"errorCode":"0x0000","time":1539832561,"action":"CheckVehicleUniqueColumn","content":"1","time_utc":1539832561}}
+    结果描述：
+        content的值当等于0时表示当前没有查到相同的记录。大于0时，表示查询到相同的记录。
+
+6. 添加用户申请 AddVehicleApplicationInfo
+    请求实例：
+        {"request":{"action":"AddVehicleApplicationInfo","content":{"UseDept":"个人","VehicleDept":"个人","VehicleModel":"三菱","VehicleInfo_Index":"3","UseContent":"上班","Car_owner":"曾恒旭","Driving_route":"合肥南站#合肥西站#创始科技","Schedule":"b#2018Y10M18D15H20m|e#2018Y10M18D15H21m","Driver":"曾恒旭","Time":"2018-10-18 15:58:13","Replies":"曾恒旭","Contractor":"曾恒旭","Remark":""}}}
+    参数说明：
+        *   UseDept         // - 用车单位
+        *   VehicleDept     // - 出车单位
+        *   VehicleInfo_Index   // - 车辆信息索引
+        *   UseContent      // - 出车事由
+        *   Car_owner       // - 带车人
+        *   Driving_route   // - 行驶路线
+        *   Schedule        // - 出车行程
+        *   Driver          // - 司机
+        *   Time            // - 用车时间
+        *   Replies         // - 批复人
+        *   Contractor      // - 承办人
+            Remark          // - 备注
+
+        *   注意：行驶路线字段应用#号隔开（隔开的部分分别对应起点，途径，目的地）
+                 出车行程字段应用|隔开。首个数据段，标记符b#代表起始时间，其次数据段标记符e#代表结束时间。时间数据Y代表“年”，M代表“月”，D代表“日”，H代表“时”，m代表“分”
+    
+    响应实例：
+        {"response":{"errorCode":"0x0000","time":1540188963,"action":"AddVehicleApplicationInfo","content":null,"time_utc":1540188963}}
+
+7. 添加用车油耗信息 AddOilConsumptionInfo
+    请求实例：
+        {"request":{"action":"AddOilConsumptionInfo","content":{"Registrant":"曾恒旭","oilList":[{"VehicleInfo_Index":"1","Date":"2018-10-20","First_Refueling_Mileage":"1000","Total_Mileage":"1200","Oil_Number":"22","Oil_Person":"曾恒旭","Driver":"曾恒旭"},{"VehicleInfo_Index":"1","Date":"2018-10-21","First_Refueling_Mileage":"1200","Total_Mileage":"1400","Oil_Number":"22","Oil_Person":"曾恒旭","Driver":"曾恒旭"},{"VehicleInfo_Index":"1","Date":"2018-10-22","First_Refueling_Mileage":"1400","Total_Mileage":"1600","Oil_Number":"22","Oil_Person":"曾恒旭","Driver":"曾恒旭"}]}}}
+    参数说明：
+        *   Registrant                  // - 登记人
+        *   oilList      [ Array ]      // - 油耗信息
+        *       VehicleInfo_Index           // - 车辆信息索引
+        *       Date                        // - 日期
+        *       First_Refueling_Mileage     // - 初次加油里程
+        *       Total_Mileage               // - 总里程
+        *       Oil_Number                  // - 加油量
+        *       Oil_Person                  // - 加油员
+        *       Driver                      // - 司机
+                Remark                      // - 备注
+    响应实例：
+        {"response":{"errorCode":"0x0000","time":1540191862,"action":"AddOilConsumptionInfo","content":null,"time_utc":1540191862}}
+
+8. 添加用车维修记录信息 AddVehicleMainTainInfo
+    请求实例：
+        {"request":{"action":"AddVehicleMainTainInfo","content":{"Registrant":"曾恒旭","mainTainList":[{"VehicleInfo_Index":"1","Date":"2018-10-20","MainTain_Reason":"正常保养","MainTain_Content":"1.更换机油，机滤。2.清洗节气阀。3.更换空气滤芯。4.更换空调滤芯。5.行车安全监测。6.洗车","Next_MainTain_Date":"2019-05-20","Repairman":"曾恒旭","Driver":"曾恒旭","Cost":"3470"},{"VehicleInfo_Index":"1","Date":"2018-10-21","MainTain_Reason":"轮胎漏气","MainTain_Content":"1.更换气门嘴。2.更换轮胎。3.动平台。4.四轮定位。","Next_MainTain_Date":"2019-05-20","Repairman":"曾恒旭","Driver":"曾恒旭","Cost":"1560"},{"VehicleInfo_Index":"1","Date":"2018-10-22","MainTain_Reason":"电池馈电","MainTain_Content":"1.更换电池。2.行车电脑升级。3.安全监测线路。4.工时。","Next_MainTain_Date":"2019-05-20","Repairman":"曾恒旭","Driver":"曾恒旭","Cost":"5500"}]}}}
+    参数说明：
+        *   Registrant                  // - 登记人
+        *   mainTainList      [ Array ]      // - 维修信息
+        *       VehicleInfo_Index           // - 车辆信息索引
+        *       Date                        // - 日期
+        *       MainTain_Reason             // - 修理/保养原因
+        *       MainTain_Content            // - 修理/保养内容
+        *       Next_MainTain_Date          // - 下次保养的时间
+        *       Repairman                   // - 维修工
+        *       Driver                      // - 司机
+        *       Cost                        // - 金额
+                Remark                      // - 备注
+
+9. 获取用车申请信息 GetVehicleApplicationInfo
+    请求实例：
+        {"request":{"action":"GetVehicleApplicationInfo","content":{}}}
+    响应实例：
+        {"response":{"errorCode":"0x0000","time":1540779665,"action":"GetVehicleApplicationInfo","content":[{"index":"2","VehicleInfo_Index":"1","VehicleID":"皖AKD102","VehicleDept":"研发中心系统部","VehicleModel":"SUV","UseDept":"安徽创世科技股份有限公司","UseContent":"出差","Car_owner":"曾恒旭","Driving_route":"安徽合肥#六安#武汉","Schedule":"b#10M26D17H20m|e#10M30D20H20m","Driver":"曾恒旭","Time":"2018-10-26 00:00:00","Replies":"","Contractor":"admin","Status":"1","ModifyDateTime":"2018-10-26 15:07:02","Remark":"无"}],"time_utc":1540779665}}
+    结果说明:
+            index           // - 索引
+            UseDept         // - 用车单位
+            VehicleDept     // - 出车单位
+            VehicleInfo_Index   // - 车辆信息索引
+            VehicleID       // - 车牌号
+            UseContent      // - 出车事由
+            Car_owner       // - 带车人
+            Driving_route   // - 行驶路线
+            Schedule        // - 出车行程
+            Driver          // - 司机
+            Time            // - 用车时间
+            Replies         // - 批复人
+            Contractor      // - 承办人
+            Status          // - 状态
+            ModifyDateTime  // - 修改时间
+            Remark          // - 备注
+
+10. 查询车辆油耗记录 GetOilConsumptionInfo
+    请求实例：
+        {"request":{"action":"GetOilConsumptionInfo","content":{"ID":"102"}}}
+    参数说明：
+        * ID        // - 车牌号。附加模糊查询
+    响应实例：
+        {"response":{"errorCode":"0x0000","time":1541662591,"action":"GetOilConsumptionInfo","content":[{"index":"13","VehicleInfo_Index":"1","ID":"皖AKD102","VIN_NO":"56B12C","Date":"2018-03-08","First_Refueling_Mileage":"100","Total_Mileage":"2008","Oil_Number":"5","Oil_Person":"胡","Registrant":"曾","Driver":"曾","ModifyDateTime":"2018-10-26 15:16:16","Remark":""},{...}],"time_utc":1541662591}}
+    结果说明：
+        index                       // - 记录索引
+        ID                          // - 车牌
+        VIN_NO                      // - 车架号
+        Registrant                  // - 登记人
+        VehicleInfo_Index           // - 车辆信息索引
+        Date                        // - 日期
+        First_Refueling_Mileage     // - 初次加油里程
+        Total_Mileage               // - 总里程
+        Oil_Number                  // - 加油量
+        Oil_Person                  // - 加油员
+        Driver                      // - 司机
+        ModifyDateTime              // - 修改时间
+        Remark                      // - 备注
+
+11. 修改车辆油耗记录 ModifyOilConsumptionInfo
+    请求实例：
+        {"request":{"action":"ModifyOilConsumptionInfo","content":{"OilConsumptionInfo_Index":"1","Date":"2011-01-02"}}}
+    参数说明：
+        *   OilConsumptionInfo_Index        // - 油耗记录索引
+
+            Registrant                  // - 登记人
+            VehicleInfo_Index           // - 车辆信息索引
+            Date                        // - 日期
+            First_Refueling_Mileage     // - 初次加油里程
+            Total_Mileage               // - 总里程
+            Oil_Number                  // - 加油量
+            Oil_Person                  // - 加油员
+            Driver                      // - 司机
+
+        修改了什么，传什么。
+
+    响应实例:
+        {"response":{"errorCode":"0x0000","time":1541664488,"action":"ModifyOilConsumptionInfo","content":null,"time_utc":1541664488}}
+
+12. 查询车辆维修保养记录 GetVehicleMainTainInfo
+    请求实例：
+        {"request":{"action":"GetVehicleMainTainInfo","content":{"ID":"102"}}}
+    参数说明：
+        * ID        // - 车牌号。附加模糊查询
+    响应实例：
+        {"response":{"errorCode":"0x0000","time":1541665939,"action":"GetVehicleMainTainInfo","content":[{"index":"7","VehicleInfo_Index":"1","ID":"皖AKD102","VIN_ID":null,"Date":"2018-03-08","MainTain_Reason":"阿萨德","MainTain_Content":"阿斯达散打所大所大所大所多阿萨德阿萨德阿萨德阿萨德阿萨德阿萨德","Next_MainTain_Date":"2018-03-09","Repairman":"曾","Driver":"胡","Cost":"500000","Registrant":"住","RegistDatetime":"2018-10-26 15:18:47","ModifyDateTime":"2018-10-26 15:18:47","Remark":""},{...}],"time_utc":1541665939}}
+    结果说明：
+        index                       // - 维修记录
+        Registrant                  // - 登记人
+        VehicleInfo_Index           // - 车辆信息索引
+        ID                          // - 车牌号
+        VIN_ID                      // - 车架号
+        Date                        // - 日期
+        MainTain_Reason             // - 修理/保养原因
+        MainTain_Content            // - 修理/保养内容
+        Next_MainTain_Date          // - 下次保养的时间
+        Repairman                   // - 维修工
+        Driver                      // - 司机
+        Cost                        // - 金额
+        Remark                      // - 备注
+
+
+13. 修改车辆维修保养记录 ModifyVehicleMainTainInfo
+    请求实例：
+        {"request":{"action":"ModifyVehicleMainTainInfo","content":{"MainTainInfo_Index":"1","Date":"2011-01-02"}}}
+    参数说明：
+        *   MainTainInfo_Index      // - 维修记录索引
+        Registrant                  // - 登记人
+        Date                        // - 日期
+        MainTain_Reason             // - 修理/保养原因
+        MainTain_Content            // - 修理/保养内容
+        Next_MainTain_Date          // - 下次保养的时间
+        Repairman                   // - 维修工
+        Driver                      // - 司机
+
+        修改了什么，传什么。
+    响应实例：
+        {"response":{"errorCode":"0x0000","time":1541666988,"action":"ModifyVehicleMainTainInfo","content":null,"time_utc":1541666988}}
+
+14. 获取预计下次保养时间 GetNextMainTainDateTime
+    请求实例：
+        {"request":{"action":"GetNextMainTainDateTime","content":{"VehicleInfo_Index":"1"}}}
+    参数说明：
+        *   VehicleInfo_Index       // - 车辆信息索引
+    响应实例：
+        {"response":{"errorCode":"0x0000","time":1546391433,"action":"GetNextMainTainDateTime","content":{"NextTime":"2019-05-21"},"time_utc":1546391433}}
+    结果说明：
+        NextTime                    // - 预计下次时间
+
+15.获取总里程 GetTotalMileage
+    请求实例：
+        {"request":{"action":"GetTotalMileage","content":{"VehicleInfo_Index":"1"}}}
+    参数说明：
+        *   VehicleInfo_Index       // - 车辆信息索引
+    响应实例:
+        {"response":{"errorCode":"0x0000","time":1546392223,"action":"GetTotalMileage","content":{"TotalMileage":"1600"},"time_utc":1546392223}}
+    结果说明：
+        TotalMileage                // - 当前总里程
+
+16. 导出车辆基本信息到Excel文件 ExportExcelForVehicleInfo
+    请求实例：
+        {"request":{"action":"ExportExcelForVehicleInfo","content":{"Title":"文档标题","Subject":"文档主题","Description":"文档的描述信息","Keywords":"文档关键词","Category":"文档的分类","RowData":[]}}}
+    参数说明：
+            Title                       // - 文档标题
+            Subject                     // - 文档主题
+            Description                 // - 文档的描述信息
+            Keywords                    // - 文档关键词
+            Category                    // - 文档的分类
+        *   RowData                     // - 数据
+    备注：必须按照一定格式进行传入数据。数据采用二维数组的方式进行传参
+    响应实例：
+        {"response":{"errorCode":"0x0000","time":1546392223,"action":"ExportExcelForVehicleInfo","content":{"TotalMileage":"1600"},"time_utc":1546392223}}
+
+17. 从Excel导入到数据库 UploadExcelToDB
+    请求实例：
+        {"request":{"action":"UploadExcelToDB","content":{}}}
+    备注：通过名称为<Excel-Uploader>的表单提交上去，并获取文件，进行文件解析
+    响应实例：
+        {"response":{"errorCode":"0x0000","time":1546392223,"action":"UploadExcelToDB","content":{"TotalMileage":"1600"},"time_utc":1546392223}}
+
+18. 删除车辆基本信息 DeleteVehicleInfo
+    请求实例：
+        {"request":{"action":"DeleteVehicleInfo","content":{"VehicleInfo_Index":"1","DeleteFlag":"0"}}}
+    参数说明：
+        *   VehicleInfo_Index       // - 车辆信息索引
+            DeleteFlag              // - 删除模式 默认0 当DeleteFlag等于0时，只删除基本车辆基本信息，当DeleteFlag等于非0时，删除所有与VehicelInfo_Index关联的数据。
+    响应实例:
+        {"response":{"errorCode":"0x0000","time":1546677246,"action":"DeleteVehicleInfo","content":null,"time_utc":1546677246}}
+
+19. 删除车辆维修保养信息 DeleteVehicleMainTainInfo
+    请求实例：
+        {"request":{"action":"DeleteVehicleMainTainInfo","content":{"MainTainInfo_Index":"2"}}}
+    参数说明：
+        *   MainTainInfo_Index       // - 车辆维修记录索引
+    响应实例:
+       {"response":{"errorCode":"0x0000","time":1546677343,"action":"DeleteVehicleMainTainInfo","content":null,"time_utc":1546677342}}
+
+20. 删除车辆油耗信息 DeleteOilConsumptionInfo
+    请求实例：
+        {"request":{"action":"DeleteOilConsumptionInfo","content":{"OilConsumptionInfo_Index":"1"}}}
+    参数说明：
+        *   OilConsumptionInfo_Index       // - 车辆油耗信息索引
+    响应实例:
+        {"response":{"errorCode":"0x0000","time":1546677414,"action":"DeleteOilConsumptionInfo","content":null,"time_utc":1546677414}}
+
+19. 获取设备历史GPS轨迹 GetDeviceHistoryGPSData <预留接口>
+
+20. 获取车辆已审批记录 GetVehicleApprovalInfo
+    请求实例：
+        {"request":{"action":"GetVehicleApprovalInfo","content":{"date":"2019-01-07"}}}
+    参数说明：
+        *   date                        // - 提交日期 格式yyyy-mm-dd
+    响应实例:
+        {"response":{"errorCode":"0x0000","time":1546847331,"action":"GetVehicleApprovalInfo","content":[{"Index":"2","VehicleInfo_Index":"2","ID":"皖H6056","V_Dept":"个人","V_Dept_Manager":"个人","Person":"增恒旭","BeginTime":"2019-01-07 08:00:00","EndTime":"2019-01-08 18:00:00","SubmitDate":"2019-01-07","ModifyDateTime":"2019-01-07 15:37:02","Remark":null},{...}}
+    结果说明：
+        Index                           // - 审批索引
+        VehicleInfo_Index               // - 车辆索引
+        ID                              // - 车牌号
+        V_Dept                          // - 车属单位
+        V_Dept_Manager                  // - 车辆管理单位
+        Person                          // - 用车人
+        BeginTime                       // - 开始时间
+        EndTime                         // - 结束时间
+        SubmitDate                      // - 提交日期
+        ModifyDateTime                  // - 修改时间
+        Remark                          // - 备注
+
+
+21. 添加车辆已审批记录 AddVehicleApprovalInfo
+    请求实例：
+        {"request":{"action":"AddVehicleApprovalInfo","content":{"date":"2019-01-07","dataList":[{"VehicleInfo_Index":"1","Person":"增恒旭","BeginTime":"2019-01-07 08:00:00","EndTime":"2019-01-08 18:00:00"},{"VehicleInfo_Index":"2","Person":"增恒旭","BeginTime":"2019-01-07 08:00:00","EndTime":"2019-01-08 18:00:00"}]}}}
+    参数说明：
+        *   date                        // - 提交日期 格式yyyy-mm-dd
+        *   dataList    <Array>         // - 数据列表
+        *       VehicleInfo_Index       // - 车辆基本信息索引
+        *       BeginTime               // - 车辆开始时间
+        *       EndTime                 // - 车辆结束时间
+    响应实例:
+        {"response":{"errorCode":"0x0000","time":1546847216,"action":"AddVehicleApprovalInfo","content":null,"time_utc":1546847215}}
+
+22. 删除车辆已审批记录 DeleteVehicleApprovalInfo
+    请求实例：
+        {"request":{"action":"DeleteVehicleApprovalInfo","content":{"date":"2019-01-07","ApprovalInfo_Index":"1"}}}
+    参数说明：
+        *   date                        // - 提交日期 格式yyyy-mm-dd
+        *   ApprovalInfo_Index          // - 审批记录索引
+    响应实例:
+        {"response":{"errorCode":"0x0000","time":1546847644,"action":"DeleteVehicleApprovalInfo","content":null,"time_utc":1546847644}}
+
